@@ -1,5 +1,6 @@
 const Home = () => {
-  return <div>Home Page</div>;
+  throw new Error("an error");
+  // return <div>Home Page</div>;
 };
 
 export default Home;
