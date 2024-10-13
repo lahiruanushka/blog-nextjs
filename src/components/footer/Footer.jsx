@@ -1,7 +1,14 @@
+import styles from "./footer.module.css";
+
 const Footer = () => {
   return (
-    <div>Footer</div>
-  )
-}
+    <div className={styles.container}>
+      <div className={styles.logo}>NextJs Blog</div>
+      <div className={styles.text}>
+        Next Blog {new Date().getFullYear()} © All rights reserved.
+      </div>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;
