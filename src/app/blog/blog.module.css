@@ -1,0 +1,50 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Create a responsive grid */
+    gap: 20px; /* Space between cards */
+    padding: 20px; /* Padding around the container */
+    background-color: var(--bgLight); /* Optional background color */
+  }
+  
+  .post {
+    border-radius: 15px; /* More rounded corners */
+    overflow: hidden; /* Ensures content fits within the rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+    background-color: var(--bgSoft); /* Background color for the post */
+  }
+  
+  .post:hover {
+    transform: translateY(-8px); /* Lift effect on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  }
+  
+  .post img {
+    width: 100%; /* Make image responsive */
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover; /* Cover to maintain aspect ratio */
+  }
+  
+  .postTitle {
+    font-size: 20px; /* Larger font size for title */
+    font-weight: 600; /* Slightly bolder title */
+    margin: 10px; /* Space around title */
+  }
+  
+  .postDesc {
+    font-size: 14px; /* Smaller font size for description */
+    color: var(--textSoft); /* Soft color for better readability */
+    margin: 0 10px 10px; /* Margins for spacing */
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 10px; /* Less padding for small screens */
+    }
+  
+    .post {
+      margin-bottom: 20px; /* Space below each post */
+    }
+  }
+  
