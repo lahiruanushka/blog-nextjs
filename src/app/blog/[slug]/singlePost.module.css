@@ -1,0 +1,89 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bgSoft);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    padding: 20px; 
+  }
+  
+  .container:hover {
+    transform: translateY(-5px);
+  }
+  
+  .imgContainer {
+    width: 100%;
+    height: 300px;
+    position: relative;
+  }
+  
+  .img {
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .textContainer {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+  
+  .detail {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+  }
+  
+  .detailText {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; 
+  }
+  
+  .detailTitle {
+    color: gray;
+    font-weight: bold;
+  }
+  
+  .detailValue {
+    font-weight: 500;
+  }
+  
+  .content {
+    font-size: 16px;
+    color: var(--textSoft);
+  }
+  
+  /* Author Image Styles */
+  .authorImageContainer {
+    width: 50px; 
+    height: 50px; 
+    border-radius: 50%; 
+    overflow: hidden; 
+  }
+  
+  .authorImage {
+    object-fit: cover; 
+    width: 100%; 
+    height: 100%;
+    transition: transform 0.3s ease; 
+    
+  }
+  
+  .authorImage:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .imgContainer {
+      display: none;
+    }
+  }
+  
