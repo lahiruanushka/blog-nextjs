@@ -1,26 +1,27 @@
 import Image from "next/image";
 import styles from "./postCard.module.css";
 import Link from "next/link";
+import { formatDate } from "@/lib/utls";
 
 const PostCard = ({ post }) => {
+  console.log("post", post);
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <div className={styles.imgContainer}>
-          <Image
-            src="https://images.pexels.com/photos/27163466/pexels-photo-27163466/free-photo-of-woman-reading-a-book-in-shadow.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-            alt=""
-            fill
-            className={styles.img}
-          />
-        </div>
+        {post.img && (
+          <>
+            <div className={styles.imgContainer}>
+              <Image src={post.img} alt="" fill className={styles.img} />
+            </div>
+          </>
+        )}
 
-        <span className={styles.date}>2024.02.04</span>
+        <span className={styles.date}>{formatDate(post.createdAt)}</span>
       </div>
       <div className={styles.bottom}>
         <h1 className={styles.title}>{post.title}</h1>
-        <p className={styles.desc}>{post.body}</p>
-        <Link className={styles.link} href={`/blog/${post.id}`} >
+        <p className={styles.desc}>{post.description}</p>
+        <Link className={styles.link} href={`/blog/${post.slug}`}>
           READ MORE
         </Link>
       </div>
