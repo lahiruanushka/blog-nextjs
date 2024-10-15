@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import dbConnect from "./dbConnect";
 
 const userSchema = new mongoose.Schema(
   {
@@ -60,5 +61,13 @@ const postSchema = new mongoose.Schema(
   }
 );
 
-export const User = mongoose.models.User || mongoose.model("User", userSchema);
-export const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
+async function getModels() {
+  await dbConnect();
+
+  const User = mongoose.models.User || mongoose.model("User", userSchema);
+  const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
+
+  return { User, Post };
+}
+
+export { getModels };

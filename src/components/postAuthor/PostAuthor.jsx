@@ -4,11 +4,10 @@ import Image from "next/image";
 import { getUser } from "@/lib/data";
 
 const PostAuthor = async ({ userId }) => {
- 
   const user = await getUser(userId);
 
   return (
-    <div style={{ display: "flex", alignItems: "center" }}>
+    <div className={styles.container}>
       <div className={styles.authorImageContainer}>
         <Image
           src={user.img ? user.img : "/noavatar.png"}

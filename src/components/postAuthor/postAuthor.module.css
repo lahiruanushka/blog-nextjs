@@ -1,3 +1,9 @@
+.container{
+  display: flex;
+  align-items: center;
+  margin: 10px 5px;
+}
+
 /* Author Image Container */
 .authorImageContainer {
   width: 60px;

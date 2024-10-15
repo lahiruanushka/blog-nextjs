@@ -9,22 +9,27 @@ const SinglePostPage = async ({ params }) => {
   const { slug } = params;
   const post = await getPost(slug);
 
+  if (!post) {
+    return <div>Post not found</div>;
+  }
+
   return (
     <div className={styles.container}>
-      {post.img && (
-        <>
-          <div className={styles.imgContainer}>
-            <Image src={post.img} alt="" fill className={styles.img} />
-          </div>
-        </>
-      )}
+      <div className={styles.imgContainer}>
+        <Image
+          src={post.img ? post.img : "/default-post.jpg"}
+          alt=""
+          fill
+          className={styles.img}
+        />
+      </div>
 
       <div className={styles.textContainer}>
         <h1 className={styles.title}>{post.title}</h1>
 
         <div className={styles.detail}>
           <Suspense fallback={<div>Loading..</div>}>
-            {/* <PostAuthor userId={post.userId} /> */}
+            <PostAuthor userId={post.userId} />
           </Suspense>
           <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published On </span>
