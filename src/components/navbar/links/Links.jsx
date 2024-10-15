@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import React, { useState } from "react";
 import styles from "./links.module.css";
 import NavLink from "./navLink/navLink";
 import Image from "next/image";
+import { LogIn, LogOut } from "lucide-react";
 
 const links = [
   { title: "Home", path: "/" },
@@ -29,10 +29,13 @@ const Links = () => {
         {session ? (
           <>
             {isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
-            <button className={styles.logout}>Logout</button>
+            <button className={styles.logout}>
+              <LogOut size={16} />
+              Logout
+            </button>
           </>
         ) : (
-          <NavLink item={{ title: "Login", path: "/login" }} />
+          <NavLink item={{ title: "Login", path: "/login" }}>Login</NavLink>
         )}
       </div>
 
@@ -55,10 +58,13 @@ const Links = () => {
           {session ? (
             <>
               {isAdmin && <NavLink item={{ title: "Admin", path: "/admin" }} />}
-              <button className={styles.logout}>Logout</button>
+              <button className={styles.logout}>
+                <LogOut size={16} />
+                Logout
+              </button>
             </>
           ) : (
-            <NavLink item={{ title: "Login", path: "/login" }} />
+            <NavLink item={{ title: "Login", path: "/login" }}>Login</NavLink>
           )}
         </div>
       )}
